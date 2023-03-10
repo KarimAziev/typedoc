@@ -1,0 +1,37 @@
+* typedoc
+
+Typedoc Utils.
+
+** Installation
+
+Emacs >= 25.1 is required.
+
+*** Manual
+
+Download the source code and put it wherever you like, e.g. into =~/.emacs.d/typedoc/=
+
+#+begin_src shell :eval no
+git clone https://github.com/KarimAziev/typedoc.git ~/.emacs.d/typedoc/
+#+end_src
+
+Add the downloaded directory to the load path:
+
+#+begin_src elisp :eval no
+(add-to-list 'load-path "~/.emacs.d/typedoc/")
+(require 'typedoc)
+#+end_src
+
+#+begin_src elisp :eval no
+(use-package typedoc
+  :straight (typedoc
+             :repo "KarimAziev/typedoc"
+             :type git
+             :host github)
+  :commands (typedoc-region-to-example))
+#+end_src
+
+** Commands
+
+*** ~typedoc-region-to-example~
+Copy active region as comments with jsdoc example tag.
+
