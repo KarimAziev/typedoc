@@ -32,9 +32,6 @@
 
 
 ;;;###autoload
-
-
-;;;###autoload
 (defun typedoc-region-to-example ()
   "Copy active region as comments with jsdoc example tag."
   (interactive)
