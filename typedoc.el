@@ -35,7 +35,7 @@
 (defun typedoc-region-to-example ()
   "Copy active region as comments with jsdoc example tag."
   (interactive)
-  (if-let ((reg (when (and (region-active-p)
+  (if-let* ((reg (when (and (region-active-p)
                            (use-region-p))
                   (concat "@example\n```ts\n"
                           (string-trim (buffer-substring-no-properties
